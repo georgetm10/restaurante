@@ -35,7 +35,7 @@ function buscarUsuario(){
 		{
 			if( (typeof ht === "object") && (ht !== null) )
 			{
-			    window.location.href = 'index.html';
+			    window.location.href = 'views/panelAdmin.html';
 			}
 			else
 				alert('Este Usuario no está registrado');				
