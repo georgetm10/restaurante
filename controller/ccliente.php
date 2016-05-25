@@ -3,13 +3,13 @@
 	require_once("../model/cliente.php");
 	switch($accion)
 	{
-		case 'guardarcliente':
+		case 'guardar':
 			$nombre=$_REQUEST['nombre'];
 			$apellido1=$_REQUEST['apellido1'];
 			$apellido2=$_REQUEST['apellido2'];
 			$observaciones=$_REQUEST['observaciones'];
 			$cliente=new cliente($nombre,$apellido1,$apellido2,$observaciones);
-			$cliente->guardarcliente();
+			$cliente->guardar();
 			break;
 		case 'eliminar':
 			$id=$_REQUEST['id'];

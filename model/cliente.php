@@ -1,6 +1,6 @@
 <?php
 require_once("conexion.php");
-class usuario
+class cliente
 {	private $id;
 	private $nombre;
 	private $apellido1;
@@ -17,7 +17,7 @@ class usuario
 		
 		$this->mc=new conexion();
 	}
-	function guardarcliente()
+	function guardar()
 	{	$datos='"'."'$this->nombre','$this->apellido1','$this->apellido2','$this->observaciones'".'"';
 		$sql="CALL guardar('cliente',$datos)";
 		echo $sql;
