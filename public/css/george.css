@@ -1,0 +1,22 @@
+.login{
+	width: 30%;
+	margin: 0 auto 0px auto;
+	padding: 25px;
+	border-radius: 10px;
+	background-color: rgba(250,250,250,0.8);
+}
+.reg{
+	width: 35%;
+	margin: 100px auto 150px auto;
+}
+}
+.bn{
+	width: 60%;
+}
+.gg{
+width: 80%;
+margin-bottom: 40px;
+}
+.fondo{
+	background-image: url('../img/fondo.jpg');
+}
