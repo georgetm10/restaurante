@@ -11,8 +11,15 @@ function guardar()
 		data:datos,
 		success:function(ht)
 		{
-
+			limpiar();
 		}
 	});
 	
 }
+function limpiar()
+	{
+	
+	document.getElementById('nombre').value= ""; 
+	document.getElementById('apellido1').value= ""; 
+	document.getElementById('apellido2').value= ""; 	
+	}
