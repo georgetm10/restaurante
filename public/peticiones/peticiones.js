@@ -16,7 +16,8 @@ function enviar(){
 		data:datos,
 		success:function(ht)
 		{
-
+			alert('USUARIO REGISTRADO')
+			limpiar()
 		}
 	});
 	
@@ -41,4 +42,17 @@ function buscarUsuario(){
 				alert('Este Usuario no está registrado');				
 		}
 	});
+}
+function limpiar()
+	{
+	
+	document.getElementById('Usuario').value= ""; 
+	document.getElementById('Contra').value= ""; 
+	document.getElementById('Nombre').value= ""; 
+	document.getElementById('Apellidos').value= ""; 
+	document.getElementById('DNI').value= ""; 
+	document.getElementById('email').value= ""; 
+	document.getElementById('Sexo').value= ""; 
+	document.getElementById('Telefono').value= ""; 
+	document.getElementById('Direccion').value= ""; 
 }

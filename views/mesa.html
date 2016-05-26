@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registro mesas</title>
+</head>
+<link rel='stylesheet' href='../public/css/bootstrap.min.css' type='text/css'>
+<link rel='stylesheet' href='../public/css/george.css' type='text/css'>
+<body>
+	<div class="reg">
+		<h2 class="text-center">Registro de Mesas</h2>
+		<br><br>
+		
+		  <div class="form-group">
+		    <input type="text" id="id" class="form-control" style="display: none">
+		  </div>
+		  <div class="form-group">
+		    <label>NumMaxComensales</label>
+		    <input type="text" id="NumComensales" class="form-control" placeholder="NumComensales">
+		  </div>
+		  <div class="form-group">
+		    <label>Ubicacion</label>
+		    <input type="text" id="ubicacion" class="form-control" placeholder="Ubicacion">
+		  </div>
+		 <div class="bn center-block">
+		  <button  class="btn btn-primary" onclick="guardar()" style="margin-right: 30px">AGREGAR</button>
+		  <a  class="btn btn-danger" href="panelAdmin.html">REGRESAR</a>
+		</div>
+		
+	</div>
+<script src='../public/js/jquery-1.12.3.min.js'></script>
+<script src='../public/js/bootstrap.min.js'></script>
+<script src='../public/peticiones/mesa.js'></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ function guardar()
 		data:datos,
 		success:function(ht)
 		{
-			alert('CAMARERO RESGISTRADO');
+			alert('CAMARERO REGISTRADO');
 			limpiar();
 		}
 	});
