@@ -12,8 +12,17 @@ function guardar()
 		data:datos,
 		success:function(ht)
 		{
-
+			alert('CLIENTE REGISTRADO');
+			limpiar();
 		}
 	});
 	
 }
+function limpiar()
+	{
+	
+	document.getElementById('nombre').value= ""; 
+	document.getElementById('apellido1').value= ""; 
+	document.getElementById('apellido2').value= ""; 
+	document.getElementById('observaciones').value= ""; 	
+	}
