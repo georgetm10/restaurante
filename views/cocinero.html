@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registro cocinero</title>
+</head>
+<link rel='stylesheet' href='../public/css/bootstrap.min.css' type='text/css'>
+<link rel='stylesheet' href='../public/css/george.css' type='text/css'>
+<body>
+	<div class="reg">
+		<h2 class="text-center">Registro de Cocineros</h2>
+		<br><br>
+		
+		  <div class="form-group">
+		    <input type="text" id="id" class="form-control" style="display: none">
+		  </div>
+		  <div class="form-group">
+		    <label>Nombre</label>
+		    <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+		  </div>
+		  <div class="form-group">
+		    <label>Apellido1</label>
+		    <input type="text" id="apellido1" class="form-control" placeholder="Apellido1">
+		  </div>
+		   <div class="form-group">
+		    <label>Apellido2</label>
+		    <input type="text" id="apellido2" class="form-control" placeholder="Apellido2">
+		  </div>
+		 <div class="bn center-block">
+		  <button  class="btn btn-primary" onclick="guardar()" style="margin-right: 30px">AGREGAR</button>
+		  <a  class="btn btn-danger" href="panelAdmin.html">REGRESAR</a>
+		</div>
+		
+	</div>
+<script src='../public/js/jquery-1.12.3.min.js'></script>
+<script src='../public/js/bootstrap.min.js'></script>
+<script src='../public/peticiones/cocinero.js'></script>
+</body>
+</html>
