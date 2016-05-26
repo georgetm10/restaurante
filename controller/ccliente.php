@@ -4,6 +4,7 @@
 	switch($accion)
 	{
 		case 'guardar':
+			$id=$_REQUEST['id'];
 			$nombre=$_REQUEST['nombre'];
 			$apellido1=$_REQUEST['apellido1'];
 			$apellido2=$_REQUEST['apellido2'];
@@ -13,14 +14,23 @@
 			break;
 		case 'eliminar':
 			$id=$_REQUEST['id'];
-			$cliente=new cliente($id,"","","","","","");
+			$cliente=new cliente($id,"","","","");
 			$cliente->eliminar();
 			break;
-		case 'buscarUsuario':
-			$user=$_REQUEST['Usuario'];
-			$Con=$_REQUEST['Con'];
-			$usuario=new usuario(0,"","","","","","","","");
-			$j=$usuario->buscarUsuario($user,$Con);
+		case 'buscar':
+			$campo=$_REQUEST['campo'];
+			$operador=$_REQUEST['operador'];
+			$valor=$_REQUEST['valor'];
+			$tipo=$_REQUEST['tipo'];
+			$cliente=new cliente(0,"","","","");
+			
+			if($tipo==0)
+			{	$ini=$_REQUEST['ini'];
+				$n=$_REQUEST['n'];
+				$j=$cliente->buscar($campo,$operador,$valor,$ini,$n);
+			}
+			else
+				$j=$cliente->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
 	}

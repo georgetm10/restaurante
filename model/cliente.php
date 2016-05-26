@@ -24,24 +24,36 @@ class cliente
 		$this->mc->conectar();
 		$res=$this->mc->conex->query($sql);
 	}
-	function buscarUsuario($user,$Con)
-	{	
-		$sql="CALL buscarUsuario('$user','$Con')";
-		//echo "$sql";
+	function actualizar()
+	{	$datos='"'."'$this->nombre','$this->apellido1','$this->apellido2','$this->observaciones'".'"';
+		$sql="CALL guardar('cliente',$datos)";
+		$sql="CALL actualizar('cliente',$datos,$this->id)";
+		//echo $sql;
 		$this->mc->conectar();
-		$re=$this->mc->conex->query($sql);
-		//print_r($re);
+		$this->mc->conex->query($sql);
+	}
+	function eliminar()
+	{		
+		$sql="CALL eliminar('cliente','id',$this->id)";
+		$this->mc->conectar();
+		$this->mc->conex->query($sql);
+	}
+	function buscar($campo,$operador,$valor,$ini,$n)
+	{	$sql="CALL buscar('cliente','$campo','$operador','$valor',$ini,$n)";
+		$this->mc->conectar();
+		$res=$this->mc->conex->query($sql);
 		$j='';
-		if($re->num_rows>0)
-		{	while($r=$re->fetch_array())
+		if($res->num_rows>0)
+		{	while($r=$res->fetch_array())
 				$a[]=$r;
 			$j=json_encode($a);
 		}
-		else {
-			$j = 0;
-			$j=json_encode($j);
-		}
 		return $j;
 	}
+	function totalRegs($campo,$operador,$valor)
+	{	$sql="CALL buscar('cliente','$campo','$operador','$valor',0,1000)";
+		$this->mc->conectar();
+		$res=$this->mc->conex->query($sql);
+		return $res->num_rows;
+	}
 }
-?> 
