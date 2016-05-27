@@ -1,0 +1,64 @@
+!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registro Factura</title>
+</head>
+<link rel='stylesheet' href='../public/css/bootstrap.min.css' type='text/css'>
+<link rel='stylesheet' href='../public/css/george.css' type='text/css'>
+<body onload='getTemas()'>
+	<div class="reg">
+		<h2 class="text-center">Registro de Facturas</h2>
+		<br><br>
+		
+		  <div class="form-group">
+		    <input type="text" id="id" class="form-control" style="display: none">
+		  </div>
+		  <div class="form-group">
+		    <label>fechaFactura</label>
+		    <input type="text" id="fechaFactura" class="form-control" placeholder="fechaFactura">
+		  </div>
+		 <div class='row'>
+			<div class='col-xs-2'>Cliente</div>
+			<div class='col-xs-3' id='clientes'></div>
+		</div>
+		 <div class='row'>
+			<div class='col-xs-2'>Mesa</div>
+			<div class='col-xs-3' id='mesas'></div>
+		</div>
+		 <div class='row'>
+			<div class='col-xs-2'>Camarero</div>
+			<div class='col-xs-3' id='camareros'></div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-2'>Usuario</div>
+			<div class='col-xs-3' id='usuarios'></div>
+		</div>
+		 <div class="bn center-block">
+		  <button  class="btn btn-primary" onclick="guardar()" style="margin-right: 30px">AGREGAR</button>
+		  <a  class="btn btn-danger" href="panelAdmin.html">REGRESAR</a>
+		</div>
+<div class='row'>
+			<div class='col-xs-8'>
+				<select id='campo'>
+					<option value='p.descripcion'>Descripci&oacute;n</option>
+				</select>
+				<select id='operador'>
+					<option value='LIKE'>Similar a</option>
+					<option value='='>Igual a</option>
+				</select>
+				<input type='text' id='valor'/>
+				<button onclick='buscar()'>Buscar</button>
+			</div>
+		</div>
+		
+		<div class='row'>
+			<div class='col-xs-5' id='results'>
+			</div>
+		</div>
+	</div>
+<script src='../public/js/jquery-1.12.3.min.js'></script>
+<script src='../public/js/bootstrap.min.js'></script>
+<script src='../public/peticiones/factura.js'></script>
+</body>
+</html>
