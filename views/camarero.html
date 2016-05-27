@@ -30,7 +30,46 @@
 		  <button  class="btn btn-primary" onclick="guardar()" style="margin-right: 30px">AGREGAR</button>
 		  <a  class="btn btn-danger" href="panelAdmin.html">REGRESAR</a>
 		</div>
+	<div class='row'>
+			<div class='col-xs-8'>
+				<select id='campo'>
+					<option value='nombre'>nombre</option>
+					<option value='apellido1'>apellido1</option>
+				</select>
+				<select id='operador'>
+					<option value='LIKE'>Similar a</option>
+					<option value='='>Igual a</option>
+				</select>
+				<input type='text' id='valor'/>
+				<button class="btn btn-success" onclick='getTotalRegs(0)'>Buscar</button>
+			</div>
+		</div>
 		
+		<div class='row'>
+			<br><br>
+			<div class='col-xs-1'>Total registros</div>
+			<div class='col-xs-1' id='tregs'></div>
+			<div class='col-xs-1'>
+				<select id='tam' onchange="tamanho=this.value;buscar(0,tamanho);np=parseInt(document.getElementById('tregs').innerHTML)/tamanho;getFooter(Math.ceil(np))">
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+					<option value='10'>10</option>
+					<option value='15'>15</option>
+					<option value='20'>20</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class='row'>
+			<div class='col-xs-10 col-xs-offset-1' id='results'>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-6' id='pages'>
+			</div>
+		</div>
 	</div>
 <script src='../public/js/jquery-1.12.3.min.js'></script>
 <script src='../public/js/bootstrap.min.js'></script>

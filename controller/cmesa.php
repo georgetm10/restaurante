@@ -11,14 +11,23 @@
 			break;
 		case 'eliminar':
 			$id=$_REQUEST['id'];
-			$cliente=new cliente($id,"","","","","","");
-			$cliente->eliminar();
+			$mesa=new mesa($id,"","");
+			$mesa->eliminar();
 			break;
-		case 'buscarUsuario':
-			$user=$_REQUEST['Usuario'];
-			$Con=$_REQUEST['Con'];
-			$usuario=new usuario(0,"","","","","","","","");
-			$j=$usuario->buscarUsuario($user,$Con);
+		case 'buscar':
+			$campo=$_REQUEST['campo'];
+			$operador=$_REQUEST['operador'];
+			$valor=$_REQUEST['valor'];
+			$tipo=$_REQUEST['tipo'];
+			$mesa=new mesa(0,"","");
+			
+			if($tipo==0)
+			{	$ini=$_REQUEST['ini'];
+				$n=$_REQUEST['n'];
+				$j=$mesa->buscar($campo,$operador,$valor,$ini,$n);
+			}
+			else
+				$j=$mesa->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
 	}

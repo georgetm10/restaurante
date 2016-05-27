@@ -81,10 +81,10 @@ function getFooter(np)
 }
 function tablaBusqueda()
 {	nm=m.length;
-	html="<table align='center' class='table table-striped'><tr><th>No</th><th>nombre</th><th>apellido1</th><th>apellido2</th><th>Acci&oacute;n</th></tr>";
+	html="<table align='center' class='table table-striped'><tr><th>No</th><th>nombre</th><th>apellido1</th><th>apellido2</th><th>observaciones</th><th>Acci&oacute;n</th></tr>";
 	c=1;
 	for(i=0;i<nm;i++)
-	{	html+="<tr><td>"+c+"</td><td>"+m[i][1]+"</td><td>"+m[i][2]+"</td><td>"+m[i][3]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
+	{	html+="<tr><td>"+c+"</td><td>"+m[i][1]+"</td><td>"+m[i][2]+"</td><td>"+m[i][3]+"</td><td>"+m[i][4]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
 		c++;
 	}
 	html+="</table>";
@@ -110,5 +110,6 @@ function mostrarDatos(fila)
 	$('#nombre').val(m[fila][1]);
 	$('#apellido1').val(m[fila][2]);
 	$('#apellido2').val(m[fila][3]);
+	$('#observaciones').val(m[fila][4]);
 	row=fila;
 }
