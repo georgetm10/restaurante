@@ -24,3 +24,29 @@ function crearComboClientes(data) {
 	$('#clientes').html(html);
 
 }
+function getMesas() {
+
+	datos="&accion=getMesas";
+	$.ajax({
+		type:'post',
+		url:'../controller/cmesa.php',
+		dataType:'json',
+		data:datos,
+		success:function(ht)
+		{
+			crearComboMesas(ht);
+		}
+	});
+}
+
+function crearComboMesas(data) {
+	
+	html = "<select id='mesa_id'>";
+	for(x in data){
+		html += "<option value='" + data[x].id_Mesa + "'>" + data[x].NumComesales + " " +"</option>"
+	}
+	html += "</select>";
+
+	$('#mesas').html(html);
+
+}
