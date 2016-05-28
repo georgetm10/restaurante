@@ -8,7 +8,7 @@ class cliente
 	private $observaciones;
 	public $mc; 
 	
-	function __construct($nombre,$apellido1,$apellido2,$observaciones)
+	function __construct($id,$nombre,$apellido1,$apellido2,$observaciones)
 	{
 		$this->id=$id;
 		$this->nombre=$nombre;
@@ -56,5 +56,20 @@ class cliente
 		$this->mc->conectar();
 		$res=$this->mc->conex->query($sql);
 		return $res->num_rows;
+	}
+
+	public function getClientes()
+	{
+		$sql = "Select * from cliente";
+		$this->mc->conectar();
+		$res=$this->mc->conex->query($sql);
+		$j='';
+		if($res->num_rows>0)
+		{	while($r=$res->fetch_array())
+				$a[]=$r;
+			$j=json_encode($a);
+		}
+		
+		return $j;
 	}
 }

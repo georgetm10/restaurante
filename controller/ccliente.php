@@ -33,5 +33,12 @@
 				$j=$cliente->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
+
+		case 'getClientes':
+			$cliente=new cliente(0,"","","","");
+			$clientes = $cliente->getClientes();
+
+			echo $clientes;
+			break;
 	}
 ?>
