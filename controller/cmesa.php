@@ -30,5 +30,10 @@
 				$j=$mesa->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
+				case 'getMesas':
+			$mesa=new mesa(0,"","");
+			$mesas = $mesa->getMesas();
+			echo $mesas;
+			break;
 	}
 ?>

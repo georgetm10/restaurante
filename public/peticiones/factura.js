@@ -43,7 +43,7 @@ function crearComboMesas(data) {
 	
 	html = "<select id='mesa_id'>";
 	for(x in data){
-		html += "<option value='" + data[x].id_Mesa + "'>" + data[x].NumComesales + " " +"</option>"
+		html += "<option value='" + data[x].id_Mesa + "'>" + data[x].NumeroMaxComensales + " " +"</option>"
 	}
 	html += "</select>";
 
