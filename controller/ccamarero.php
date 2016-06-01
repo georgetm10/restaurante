@@ -32,5 +32,11 @@
 				$j=$camarero->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
+		case 'getCamareros':
+			$camarero=new camarero(0,"","","");
+			$camareros = $camarero->getCamareros();
+
+			echo $camareros;
+			break;
 	}
 ?>
