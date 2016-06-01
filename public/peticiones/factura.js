@@ -50,3 +50,29 @@ function crearComboMesas(data) {
 	$('#mesas').html(html);
 
 }
+function getUsuarios() {
+
+	datos="&accion=getUsuarios";
+	$.ajax({
+		type:'post',
+		url:'../controller/cusuario.php',
+		dataType:'json',
+		data:datos,
+		success:function(ht)
+		{
+			crearComboUsuarios(ht);
+		}
+	});
+}
+
+function crearComboUsuarios(data) {
+	
+	html = "<select id='usuario_id'>";
+	for(x in data){
+		html += "<option value='" + data[x].ID_USUARIO + "'>" + data[x].USUARIO + " " +"</option>"
+	}
+	html += "</select>";
+
+	$('#usuarios').html(html);
+
+}

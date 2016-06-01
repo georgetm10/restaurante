@@ -28,5 +28,11 @@
 			$j=$usuario->buscarUsuario($user,$Con);
 			echo $j;	
 			break;
+		case 'getUsuarios':
+			$usuario=new usuario(0,"","","","","","","","");
+			$usuarios = $usuario->getUsuarios();
+
+			echo $usuarios;
+			break;
 	}
 ?>
