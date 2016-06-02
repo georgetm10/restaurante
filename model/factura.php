@@ -35,7 +35,7 @@ class factura
 		$this->mc->conex->query($sql);
 	}
 		function buscar($campo,$operador,$valor,$ini,$n)
-	{	$sql="CALL buscar('factura','$campo','$operador','$valor',$ini,$n)";
+	{	$sql="CALL buscar('factura','$campo','$operador','$valor',0,1000)";
 		$this->mc->conectar();
 		$res=$this->mc->conex->query($sql);
 		$j='';
