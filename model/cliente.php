@@ -35,7 +35,7 @@ class cliente
 	}
 	function eliminar()
 	{		
-		$sql="CALL eliminar('cliente','id',$this->id)";
+		$sql="CALL eliminar('cliente','id_cliente',$this->id)";
 		$this->mc->conectar();
 		$this->mc->conex->query($sql);
 	}

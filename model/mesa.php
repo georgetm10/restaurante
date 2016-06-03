@@ -6,8 +6,9 @@ class mesa
 	private $ubicacion;
 	public $mc; 
 	
-	function __construct($NumComensales,$ubicacion)
+	function __construct($id,$NumComensales,$ubicacion)
 	{
+		$this->id=$id;
 		$this->NumComensales=$NumComensales;
 		$this->ubicacion=$ubicacion;
 		$this->mc=new conexion();
@@ -29,7 +30,7 @@ class mesa
 	}
 	function eliminar()
 	{		
-		$sql="CALL eliminar('mesa','id',$this->id)";
+		$sql="CALL eliminar('mesa','id_mesa',$this->id)";
 		$this->mc->conectar();
 		$this->mc->conex->query($sql);
 	}

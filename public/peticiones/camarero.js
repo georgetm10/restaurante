@@ -36,7 +36,10 @@ function limpiar()
 	}
 
 function buscar(ini,n)
-{	datos="campo="+campo+"&operador="+operador+"&valor="+valor+"&accion=buscar&tipo=0&ini="+ini+"&n="+n;
+{	campo=$('#campo').val();
+	operador=$('#operador').val();
+	valor=$('#valor').val();
+	datos="campo="+campo+"&operador="+operador+"&valor="+valor+"&accion=buscar&tipo=0&ini="+ini+"&n="+n;
 	$.ajax({
 		type:'post',
 		url:'../controller/ccamarero.php',

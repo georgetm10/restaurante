@@ -8,10 +8,10 @@
 			$nombre=$_REQUEST['nombre'];
 			$apellido1=$_REQUEST['apellido1'];
 			$apellido2=$_REQUEST['apellido2'];
-			$camarero=new camarero($nombre,$apellido1,$apellido2);
+			$camarero=new camarero($id,$nombre,$apellido1,$apellido2);
 			$camarero->guardar();
 			break;
-			case 'eliminar':
+		case 'eliminar':
 			$id=$_REQUEST['id'];
 			$camarero=new camarero($id,"","","");
 			$camarero->eliminar();

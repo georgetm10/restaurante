@@ -7,8 +7,9 @@ class camarero
 	private $apellido2;
 	public $mc; 
 	
-	function __construct($nombre,$apellido1,$apellido2)
+	function __construct($id,$nombre,$apellido1,$apellido2)
 	{
+		$this->id=$id;
 		$this->nombre=$nombre;
 		$this->apellido1=$apellido1;
 		$this->apellido2=$apellido2;
@@ -32,7 +33,7 @@ class camarero
 	}
 	function eliminar()
 	{		
-		$sql="CALL eliminar('camarero','id',$this->id)";
+		$sql="CALL eliminar('camarero','id_Camarero',$this->id)";
 		$this->mc->conectar();
 		$this->mc->conex->query($sql);
 	}
