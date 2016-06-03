@@ -12,6 +12,7 @@
 		<br><br>
 		
 		  <div class="form-group">
+		      <label>id</label>
 		    <input type="text" id="id" class="form-control" style="display: none">
 		  </div>
 		  <div class="form-group">
@@ -47,13 +48,34 @@
 					<option value='LIKE'>Similar a</option>
 					<option value='='>Igual a</option>
 				</select>
-				<input type='text' id='valor'/>
-				<button onclick='buscar()'>Buscar</button>
+					<input type='text' id='valor'/>
+				<button class="btn btn-success" onclick='getTotalRegs(0)'>Buscar</button>
+			</div>
+		</div>
+		
+		<div class='row'>
+			<br><br>
+			<div class='col-xs-1'>Total registros</div>
+			<div class='col-xs-1' id='tregs'></div>
+			<div class='col-xs-1'>
+				<select id='tam' onchange="tamanho=this.value;buscar(0,tamanho);np=parseInt(document.getElementById('tregs').innerHTML)/tamanho;getFooter(Math.ceil(np))">
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+					<option value='10'>10</option>
+					<option value='15'>15</option>
+					<option value='20'>20</option>
+				</select>
 			</div>
 		</div>
 		
 		<div class='row'>
 			<div class='col-xs-5' id='results'>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-6' id='pages'>
 			</div>
 		</div>
 	</div>

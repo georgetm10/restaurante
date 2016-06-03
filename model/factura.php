@@ -28,6 +28,12 @@ class factura
 		$r=$res->fetch_array();
 		return $r[0];
 	}
+	function eliminar()
+	{		
+		$sql="CALL eliminar('factura','id_factura',$this->id)";
+		$this->mc->conectar();
+		$this->mc->conex->query($sql);
+	}
 	function actualizar()
 	{	$datos='"'."'$this->fechaFactura',$this->id_cliente,$this->id_mesa,$this->id_Camarero,$this->ID_USUARIO".'"';
 		$sql="CALL actualizar('factura',$datos,'$this->id')";

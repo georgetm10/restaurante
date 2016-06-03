@@ -16,7 +16,7 @@
 		case 'eliminar':
 			$id=$_REQUEST['id'];
 			$factura=new factura($id,"","","","","");
-			$factura->eliminar();
+			$factura->eliminar('id');
 			break;
 		case 'buscar':
 			$campo=$_REQUEST['campo'];

@@ -8,7 +8,7 @@ var operador;
 var valor;
 function guardar()
 {
-	id=$('#id').val();
+	id=$('#id').html();
 	fechaFactura=$('#fechaFactura').val();
 	id_cliente=$('#id_cliente').val();
 	id_mesa=$('#id_mesa').val();
