@@ -1,0 +1,33 @@
+CREATE VIEW `detallefactura_vista` AS
+SELECT
+	factura.id_factura,
+	factura.fechaFactura,
+	factura.cliente_id_cliente,
+	factura.mesa_id_mesa,
+	factura.Camarero_id_Camarero,
+	factura.usuario_id_usuario,
+	usuario.USUARIO,
+	cliente.Nombre as nomCliente,
+	mesa.NumeroMaxComensales,
+	mesa.ubicacion,
+	camarero.nombre as nomCamarero
+FROM
+	factura
+INNER JOIN cliente ON factura.cliente_id_cliente = cliente.id_cliente
+INNER JOIN mesa ON factura.mesa_id_mesa = mesa.id_mesa
+INNER JOIN camarero ON factura.Camarero_id_Camarero = camarero.id_Camarero
+INNER JOIN usuario ON factura.usuario_id_usuario = usuario.ID_USUARIO
+
+CREATE VIEW `detallefactura_vista` AS
+SELECT
+	detallefactura.id_DetalleFactura,
+	detallefactura.plato,
+	detallefactura.importe,
+	detallefactura.Cocinero_id_Cocinero,
+	detallefactura.factura_id_factura,
+	cocinero.nombre as nomCocinero,
+	factura.fechaFactura,
+FROM
+	detallefactura
+INNER JOIN cocinero ON detallefactura.Cocinero_id_Cocinero = cocinero.id_Cocinero
+INNER JOIN mesa ON detallefactura.factura_id_factura = factura.id_factura

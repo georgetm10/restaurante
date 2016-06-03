@@ -90,7 +90,7 @@ function tablaBusqueda()
 	html="<table align='center' class='table table-striped'><tr><th>No</th><th>fechaFactura</th><th>id_cliente</th><th>id_mesa</th><th>id_Camarero</th><th>ID_USUARIO</th><th>Acci&oacute;n</th></tr>";
 	c=1;
 	for(i=0;i<nm;i++)
-	{	html+="<tr><td>"+c+"</td><td>"+m[i][1]+"</td><td>"+m[i][2]+"</td><td>"+m[i][3]+"</td><td>"+m[i][4]+"</td><td>"+m[i][5]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
+	{	html+="<tr><td>"+c+"</td><td>"+m[i]['fechaFactura']+"</td><td>"+m[i]['nomCliente']+"</td><td>"+m[i]['NumeroMaxComensales']+"</td><td>"+m[i]['nomCamarero']+"</td><td>"+m[i][6]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
 		c++;
 	}
 	html+="</table>";
