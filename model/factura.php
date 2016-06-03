@@ -58,6 +58,19 @@ class factura
 		$res=$this->mc->conex->query($sql);
 		return $res->num_rows;
 	}
-
+	public function getFacturas()
+	{
+		$sql = "Select * from factura";
+		$this->mc->conectar();
+		$res=$this->mc->conex->query($sql);
+		$j='';
+		if($res->num_rows>0)
+		{	while($r=$res->fetch_array())
+				$a[]=$r;
+			$j=json_encode($a);
+		}
+		
+		return $j;
+	}
 }
 ?> 

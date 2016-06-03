@@ -21,7 +21,7 @@
 			$operador=$_REQUEST['operador'];
 			$valor=$_REQUEST['valor'];
 			$tipo=$_REQUEST['tipo'];
-			$cocinero=new cocinero(0,"","","","");
+			$cocinero=new cocinero(0,"","","");
 			
 			if($tipo==0)
 			{	$ini=$_REQUEST['ini'];
@@ -31,6 +31,12 @@
 			else
 				$j=$cocinero->totalRegs($campo,$operador,$valor);
 			echo $j;	
+			break;
+		case 'getCocineros':
+			$cocinero=new cocinero(0,"","","");
+			$cocineros = $cocinero->getCocineros();
+
+			echo $cocineros;
 			break;
 	}
 ?>

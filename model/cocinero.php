@@ -32,7 +32,7 @@ class cocinero
 	}
 	function eliminar()
 	{		
-		$sql="CALL eliminar('cocinero','id_cocinero',$this->id)";
+		$sql="CALL eliminar('cocinero','id_Cocinero',$this->id)";
 		$this->mc->conectar();
 		$this->mc->conex->query($sql);
 	}
@@ -53,5 +53,19 @@ class cocinero
 		$this->mc->conectar();
 		$res=$this->mc->conex->query($sql);
 		return $res->num_rows;
+	}
+	public function getCocineros()
+	{
+		$sql = "Select * from cocinero";
+		$this->mc->conectar();
+		$res=$this->mc->conex->query($sql);
+		$j='';
+		if($res->num_rows>0)
+		{	while($r=$res->fetch_array())
+				$a[]=$r;
+			$j=json_encode($a);
+		}
+		
+		return $j;
 	}
 }

@@ -34,5 +34,11 @@
 				$j=$factura->totalRegs($campo,$operador,$valor);
 			echo $j;	
 			break;
+		case 'getFacturas':
+			$factura=new factura(0,"","","","","");
+			$facturas = $factura->getFacturas();
+
+			echo $facturas;
+			break;
 	}
 ?>
