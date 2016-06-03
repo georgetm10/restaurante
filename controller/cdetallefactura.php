@@ -6,7 +6,7 @@
 		case 'guardar':
 			$id=$_REQUEST['id'];
 			$plato=$_REQUEST['plato'];
-			$importe=$_REQUEST['importe'];
+			$importe=$_POST['importe'];
 			$id_Cocinero=$_REQUEST['id_Cocinero'];
 			$id_factura=$_REQUEST['id_factura'];
 			$detallefactura=new detallefactura($id,$plato,$importe,$id_Cocinero,$id_factura);

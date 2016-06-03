@@ -13,7 +13,7 @@ function guardar()
 	importe=$('#importe').val();
 	id_Cocinero=$('#id_Cocinero').val();
 	id_factura=$('#id_factura').val();
-	datos="id="+id+"&plato="+plato+"&importe"+importe+"&id_Cocinero="+id_Cocinero+"&id_factura="+id_factura+"&accion=guardar";
+	datos="id="+id+"&plato="+plato+"&importe="+importe+"&id_Cocinero="+id_Cocinero+"&id_factura="+id_factura+"&accion=guardar";
 	$.ajax({
 		type:'post',
 		url:'../controller/cdetallefactura.php',
