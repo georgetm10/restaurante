@@ -39,7 +39,7 @@ class detallefactura
 		$this->mc->conex->query($sql);
 	}
 		function buscar($campo,$operador,$valor,$ini,$n)
-	{	$sql="CALL buscar('detallefactura','$campo','$operador','$valor',0,1000)";
+	{	$sql="CALL buscar('detallefactura_vista','$campo','$operador','$valor',0,1000)";
 		$this->mc->conectar();
 		$res=$this->mc->conex->query($sql);
 		$j='';

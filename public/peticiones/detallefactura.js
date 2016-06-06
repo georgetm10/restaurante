@@ -87,7 +87,7 @@ function tablaBusqueda()
 	html="<table align='center' class='table table-striped'><tr><th>No</th><th>plato</th><th>importe</th><th>id_cocinero</th><th>id_factura</th><th>Acci&oacute;n</th></tr>";
 	c=1;
 	for(i=0;i<nm;i++)
-	{	html+="<tr><td>"+c+"</td><td>"+m[i][1]+"</td><td>"+m[i][2]+"</td><td>"+m[i][3]+"</td><td>"+m[i][4]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
+	{	html+="<tr><td>"+c+"</td><td>"+m[i][1]+"</td><td>"+m[i][2]+"</td><td>"+m[i]['nomCocinero']+"</td><td>"+m[i][6]+"</td><td><button class='glyphicon glyphicon-pencil' onclick='mostrarDatos("+i+")'></button> <button class='glyphicon glyphicon-remove' onclick='eliminar("+m[i][0]+","+i+")'></button><td/></tr>";
 		c++;
 	}
 	html+="</table>";

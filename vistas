@@ -30,4 +30,4 @@ SELECT
 FROM
 	detallefactura
 INNER JOIN cocinero ON detallefactura.Cocinero_id_Cocinero = cocinero.id_Cocinero
-INNER JOIN mesa ON detallefactura.factura_id_factura = factura.id_factura
+INNER JOIN factura ON detallefactura.factura_id_factura = factura.id_factura
