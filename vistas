@@ -26,7 +26,7 @@ SELECT
 	detallefactura.Cocinero_id_Cocinero,
 	detallefactura.factura_id_factura,
 	cocinero.nombre as nomCocinero,
-	factura.fechaFactura,
+	factura.fechaFactura
 FROM
 	detallefactura
 INNER JOIN cocinero ON detallefactura.Cocinero_id_Cocinero = cocinero.id_Cocinero
